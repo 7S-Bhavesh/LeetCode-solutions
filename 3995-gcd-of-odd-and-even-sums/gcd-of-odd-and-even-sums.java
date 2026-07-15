@@ -1,0 +1,15 @@
+class Solution {
+    public int gcd(int a,int b){
+        if(b==0){
+            return a;
+        }
+        return gcd(b,a%b);
+    }
+    public int gcdOfOddEvenSums(int n) {
+        int even=n*(n-1);
+        int odd=(n*n);
+        System.out.println(even);
+        System.out.println(odd);
+        return gcd(even,odd);
+    }
+}
