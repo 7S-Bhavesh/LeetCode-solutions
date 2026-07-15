@@ -8,8 +8,7 @@ class Solution {
     public int gcdOfOddEvenSums(int n) {
         int even=n*(n-1);
         int odd=(n*n);
-        System.out.println(even);
-        System.out.println(odd);
-        return gcd(even,odd);
+       
+        return n;
     }
 }
