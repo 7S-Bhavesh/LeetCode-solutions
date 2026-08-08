@@ -17,7 +17,7 @@ class Solution {
         }
          j=0;
         boolean pow=true;
-        int[] ans=new int[n];
+        int[] ans=new int[m];
         int k=0;
         int i=0;
         while(i<n && j<m){
@@ -37,7 +37,7 @@ class Solution {
         }
         }
 
-    if(j==m) return Arrays.copyOf(ans,m);
+    if(j==m) return ans;
     return new int[]{};
 
 
