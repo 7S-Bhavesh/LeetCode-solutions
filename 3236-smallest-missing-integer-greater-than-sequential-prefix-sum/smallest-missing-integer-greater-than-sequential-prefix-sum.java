@@ -6,9 +6,6 @@ class Solution {
         for(int i:nums){
             set.add(i);
         }
-        if(n==1){
-            return nums[0]+1;
-        }
         int c=1;
         int sum=nums[0];
         int max=0;
@@ -27,11 +24,10 @@ class Solution {
             max=nums[0];
         }
         int j=max;
-        // System.out.println();
         while(set.contains(j)){
             j++;
         }
-      return (j==0)?nums[0]+1:j;
+      return j;
         
         
     }
