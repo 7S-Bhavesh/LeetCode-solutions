@@ -1,31 +1,33 @@
 class Solution {
     public int f(int[] arr,int ind,int target,int[][] dp){
         int n=arr.length;
-          if(ind>=n){
-            return 0;
-    }
 
-    if(target==0){
-        return 0;
-    }
-
-    if(ind==n-1){
-        if(target%arr[ind]==0){
-            return target/arr[ind];
+    for(int t=0;t<=target;t++){
+           if(t%arr[0]==0){
+            dp[0][t]=t/arr[ind];
         }
         else{
-            return (int)1e9;
+             dp[0][t]=(int)1e9;
         }
     }
-   if(dp[ind][target]!=-1) return dp[ind][target];
+  
+     
+    
+//    if(dp[ind][target]!=-1) return dp[ind][target];
       
 
     int t=(int)1e9;
-    if(target>=arr[ind]){
-        t=1+f(arr,ind,target-arr[ind],dp);
+    for(int i=1;i<n;i++){
+        for(int tar=0;tar<=target;tar++){
+              if(tar>=arr[i]){
+        t=1+dp[i][tar-arr[i]];
     }
-    int nt=f(arr,ind+1,target,dp);
-    return dp[ind][target]=Math.min(t,nt);
+    int nt=dp[i-1][tar];
+     dp[i][tar]=Math.min(t,nt);
+        }
+    }
+    return dp[n-1][target];
+  
     }
     public int coinChange(int[] coins, int amount) {
         int n=coins.length;
